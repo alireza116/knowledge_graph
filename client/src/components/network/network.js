@@ -1,11 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
+import "d3-selection-multi";
 
 /* Component */
 const NetworkChart = (props) => {
   const d3Container = useRef(null);
   const svg = useRef(null);
   const container = useRef(null);
+  const nodeContainer = useRef(null);
+  const linkContainer = useRef(null);
+  const labelContainer = useRef(null);
   //   const w = useRef(null);
   //   const h = useRef(null);
   console.log(props.handleExpand);
@@ -19,7 +23,29 @@ const NetworkChart = (props) => {
     if (d3Container.current) {
       //svg returned by this component
       svg.current = d3.select(d3Container.current);
+
+      svg.current
+        .append("defs")
+        .append("marker")
+        .attrs({
+          id: "arrowhead",
+          viewBox: "-0 -5 10 10",
+          refX: 15,
+          refY: 0,
+          orient: "auto",
+          markerUnits: "userSpaceOnUse",
+          markerWidth: 13,
+          markerHeight: 13,
+          xoverflow: "visible",
+        })
+        .append("svg:path")
+        .attr("d", "M 0,-5 L 10 ,0 L 0,5")
+        .attr("fill", "#999")
+        .style("stroke", "none");
       container.current = svg.current.append("g");
+      linkContainer.current = container.current.append("g");
+      nodeContainer.current = container.current.append("g");
+      labelContainer.current = container.current.append("g");
 
       svg.current.call(
         d3
@@ -57,6 +83,15 @@ const NetworkChart = (props) => {
         nodes: [],
         links: [],
       };
+
+      let withScale = d3
+        .scaleLinear()
+        .domain(
+          graph.links.map((d) => {
+            return d.value;
+          })
+        )
+        .range([0.5, 1.5]);
 
       graph.nodes.forEach(function (d, i) {
         label.nodes.push({ node: d });
@@ -97,39 +132,29 @@ const NetworkChart = (props) => {
         adjlist[d.target.index + "-" + d.source.index] = true;
       });
 
-      let link = container.current
+      let link = linkContainer.current
         .attr("class", "links")
         .selectAll("line")
         .data(graph.links)
         .join("line")
         .attr("stroke", "#aaa")
-        .attr("stroke-width", "1px");
+        .attr("stroke-width", (d) => {
+          console.log(d);
+          return withScale(d.value);
+        })
+        .attr("marker-end", "url(#arrowhead)");
 
-      let node = container.current
+      let node = nodeContainer.current
         .attr("class", "nodes")
         .selectAll("circle")
         .data(graph.nodes)
         .join("circle")
         .attr("r", 10)
         .attr("fill", function (d) {
-          return color(d.group);
+          return color(d.mainGroup);
         });
 
-      node.on("click", (d) => {
-        console.log(d);
-        props.handleExpand(d.mainGroup);
-      });
-      node.on("mouseover", focus).on("mouseout", unfocus);
-
-      node.call(
-        d3
-          .drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended)
-      );
-
-      var labelNode = container.current
+      var labelNode = labelContainer.current
         .attr("class", "labelNodes")
         .selectAll("text")
         .data(label.nodes)
@@ -141,6 +166,21 @@ const NetworkChart = (props) => {
         .style("font-family", "Arial")
         .style("font-size", 12)
         .style("pointer-events", "none"); // to prevent mouseover/drag capture
+
+      node.on("click", (d) => {
+        console.log(d);
+        props.handleExpand(d.mainGroup);
+      });
+
+      node.on("mouseover", focus).on("mouseout", unfocus);
+
+      node.call(
+        d3
+          .drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended)
+      );
 
       node.on("mouseover", focus).on("mouseout", unfocus);
 
