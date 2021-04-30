@@ -12,7 +12,7 @@ const NetworkChart = (props) => {
   const labelContainer = useRef(null);
   //   const w = useRef(null);
   //   const h = useRef(null);
-  console.log(props.handleExpand);
+  // console.log(props.handleExpand);
 
   let color = d3.scaleOrdinal(d3.schemeCategory10);
   //   const margins = useRef(null);
@@ -76,6 +76,7 @@ const NetworkChart = (props) => {
   useEffect(() => {
     if (d3Container.current && props.data) {
       let graph = props.data;
+      console.log(graph);
       const w = svg.current.node().getBoundingClientRect().width;
       //height of svg
       const h = svg.current.node().getBoundingClientRect().height;
@@ -84,14 +85,13 @@ const NetworkChart = (props) => {
         links: [],
       };
 
-      let withScale = d3
-        .scaleLinear()
-        .domain(
-          graph.links.map((d) => {
-            return d.value;
-          })
-        )
-        .range([0.5, 1.5]);
+      let widthExtent = d3.extent(
+        graph.links.map((d) => {
+          return d.value;
+        })
+      );
+      console.log(widthExtent);
+      let widthScale = d3.scaleLinear().domain(widthExtent).range([1, 5]);
 
       graph.nodes.forEach(function (d, i) {
         label.nodes.push({ node: d });
@@ -139,8 +139,7 @@ const NetworkChart = (props) => {
         .join("line")
         .attr("stroke", "#aaa")
         .attr("stroke-width", (d) => {
-          console.log(d);
-          return withScale(d.value);
+          return widthScale(d.value);
         })
         .attr("marker-end", "url(#arrowhead)");
 

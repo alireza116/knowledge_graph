@@ -144,10 +144,14 @@ const App = () => {
       let uniqueNodes = new Set();
       Object.keys(adj).forEach((source) => {
         if (!uniqueNodes.has(source)) {
+          let nodeSum = Object.entries(adj[source]).reduce((acc, curr) => {
+            return acc + curr[1];
+          }, 0);
           network.nodes.push({
             id: source,
             group: "from",
             mainGroup: source.split("_")[0],
+            value: nodeSum,
           });
           uniqueNodes.add(source);
         }
