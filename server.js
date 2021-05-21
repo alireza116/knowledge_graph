@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 const path = require("path");
 // const moment = require("moment");
 var cookieParser = require("cookie-parser");
@@ -22,14 +23,29 @@ const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(fileUpload());
 // API calls
-app.get("/api/data", (req, res) => {
+app.post("/api/data", (req, res) => {
   // res.json(geojson);
+  if (req.files === null) {
+    console.log("no req files");
+    return res.status(400).json({ msg: "no file uploaded" });
+  }
+  if (!req.files.file.name.endsWith(".csv")) {
+    console.log("not csv");
+    return res.status(400).json({ msg: "wrong file uploaded" });
+  }
+  console.log(req.files);
+  // console.log(req.protocol + "://" + req.get("host"));
+  // console.log(req.file);
+  let f = req.files.file.data.toString("utf8");
+  // console.log(f);
+  // let path = "public/dataset_2.csv";
+  // console.log(req.files.file.path);
   csv()
-    .fromFile("public/dataset.csv")
+    .fromString(f)
     .then((jsonObj) => {
-      console.log(jsonObj);
+      // console.log(jsonObj);
       res.json(jsonObj);
       /**
        * [

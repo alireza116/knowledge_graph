@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import "d3-selection-multi";
 
@@ -18,6 +18,7 @@ const NetworkChart = (props) => {
   //   const margins = useRef(null);
   const width = props.width || "100%";
   const height = props.height || "100%";
+  const [fixed, setfixed] = useState(false);
 
   useEffect(() => {
     if (d3Container.current) {
@@ -40,12 +41,26 @@ const NetworkChart = (props) => {
         })
         .append("svg:path")
         .attr("d", "M 0,-5 L 10 ,0 L 0,5")
-        .attr("fill", "#999")
+        .attr("fill", "black")
         .style("stroke", "none");
+
       container.current = svg.current.append("g");
       linkContainer.current = container.current.append("g");
       nodeContainer.current = container.current.append("g");
       labelContainer.current = container.current.append("g");
+
+      // svg.current
+      //   .append("rect")
+      //   .attrs({ x: 10, y: 10, width: 100, height: 40, fill: "teal" })
+      //   .on("click", () => {
+      //     console.log("asdasd");
+      //     console.log(fixed);
+      //     d3.selectAll(".node").classed(() => {
+      //       console.log(fixed);
+      //       return !fixed;
+      //     });
+      //     setfixed(!fixed);
+      //   });
 
       svg.current.call(
         d3
@@ -56,20 +71,7 @@ const NetworkChart = (props) => {
           })
       );
 
-      //   const leftMarginPct = 0.05;
-      //   const rightMarginpct = 0.02;
-      //   const topMarginPct = 0.15;
-      //   const bottomMarginPct = 0.15;
-
-      //   margins.current = {
-      //     left: width * leftMarginPct,
-      //     right: width * rightMarginpct,
-      //     top: height * topMarginPct,
-      //     bottom: height * bottomMarginPct,
-      //   };
-
-      //   w.current = width;
-      //   h.current = height;
+      svg.current.on("dblclick.zoom", null);
     }
   }, []);
 
@@ -87,11 +89,20 @@ const NetworkChart = (props) => {
 
       let widthExtent = d3.extent(
         graph.links.map((d) => {
-          return d.value;
+          return d.weighted_value;
         })
       );
+
       console.log(widthExtent);
-      let widthScale = d3.scaleLinear().domain(widthExtent).range([1, 5]);
+      let widthScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(widthExtent)])
+        .range([1, 5]);
+
+      let edgeColorScale = d3
+        .scaleLinear()
+        .domain(widthExtent)
+        .range(["red", "blue"]);
 
       graph.nodes.forEach(function (d, i) {
         label.nodes.push({ node: d });
@@ -109,21 +120,22 @@ const NetworkChart = (props) => {
 
       var graphLayout = d3
         .forceSimulation(graph.nodes)
-        .force("charge", d3.forceManyBody().strength(-6000))
+        // .force("charge", d3.forceManyBody().strength(-6000))
+        .force("charge", d3.forceManyBody().strength(-1000))
         .force("center", d3.forceCenter(w / 2, h / 2))
-        .force("x", d3.forceX(w / 2).strength(1))
-        .force("y", d3.forceY(h / 2).strength(1))
+        // .force("x", d3.forceX(w / 2).strength(1))
+        // .force("y", d3.forceY(h / 2).strength(1))
         .force(
           "link",
-          d3
-            .forceLink(graph.links)
-            .id(function (d) {
-              return d.id;
-            })
-            .distance(50)
-            .strength(1)
+          d3.forceLink(graph.links).id(function (d) {
+            return d.id;
+          })
+          // .distance(100)
+          // .strength(1)
         )
         .on("tick", ticked);
+
+      const drag = d3.drag().on("start", dragstart).on("drag", dragged);
 
       let adjlist = [];
 
@@ -137,9 +149,11 @@ const NetworkChart = (props) => {
         .selectAll("line")
         .data(graph.links)
         .join("line")
-        .attr("stroke", "#aaa")
+        .attr("stroke", (d) => {
+          return edgeColorScale(d.weighted_value);
+        })
         .attr("stroke-width", (d) => {
-          return widthScale(d.value);
+          return widthScale(Math.abs(d.weighted_value));
         })
         .attr("marker-end", "url(#arrowhead)");
 
@@ -151,7 +165,14 @@ const NetworkChart = (props) => {
         .attr("r", 10)
         .attr("fill", function (d) {
           return color(d.mainGroup);
-        });
+        })
+        .classed("node", true)
+        .classed("fixed", (d) => d.fx !== undefined)
+        .on("click", click)
+        .call(
+          drag
+          // .on("end", dragended)
+        );
 
       var labelNode = labelContainer.current
         .attr("class", "labelNodes")
@@ -166,26 +187,36 @@ const NetworkChart = (props) => {
         .style("font-size", 12)
         .style("pointer-events", "none"); // to prevent mouseover/drag capture
 
-      node.on("click", (d) => {
+      node.on("dblclick", (d) => {
         console.log(d);
         props.handleExpand(d.mainGroup);
       });
 
       node.on("mouseover", focus).on("mouseout", unfocus);
 
-      node.call(
-        d3
-          .drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended)
-      );
+      // node;
+
+      // node;
+
+      function click(d) {
+        delete d.fx;
+        delete d.fy;
+        console.log(d);
+        d3.select(this).classed("fixed", false);
+        graphLayout.alpha(1).restart();
+      }
 
       node.on("mouseover", focus).on("mouseout", unfocus);
 
       function ticked() {
-        node.call(updateNode);
-        link.call(updateLink);
+        // node.call(updateNode);
+        // link.call(updateLink);
+        link
+          .attr("x1", (d) => d.source.x)
+          .attr("y1", (d) => d.source.y)
+          .attr("x2", (d) => d.target.x)
+          .attr("y2", (d) => d.target.y);
+        node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
 
         labelLayout.alphaTarget(0.3).restart();
         labelNode.each(function (d, i) {
@@ -236,21 +267,21 @@ const NetworkChart = (props) => {
         link.style("opacity", 1);
       }
 
-      function updateLink(link) {
-        link
-          .attr("x1", function (d) {
-            return fixna(d.source.x);
-          })
-          .attr("y1", function (d) {
-            return fixna(d.source.y);
-          })
-          .attr("x2", function (d) {
-            return fixna(d.target.x);
-          })
-          .attr("y2", function (d) {
-            return fixna(d.target.y);
-          });
-      }
+      // function updateLink(link) {
+      //   link
+      //     .attr("x1", function (d) {
+      //       return fixna(d.source.x);
+      //     })
+      //     .attr("y1", function (d) {
+      //       return fixna(d.source.y);
+      //     })
+      //     .attr("x2", function (d) {
+      //       return fixna(d.target.x);
+      //     })
+      //     .attr("y2", function (d) {
+      //       return fixna(d.target.y);
+      //     });
+      // }
 
       function updateNode(node) {
         node.attr("transform", function (d) {
@@ -258,23 +289,26 @@ const NetworkChart = (props) => {
         });
       }
 
-      function dragstarted(d) {
-        d3.event.sourceEvent.stopPropagation();
-        if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
+      function dragstart(d) {
+        // d3.event.sourceEvent.stopPropagation();
+        // if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
+        // d.fx = d.x;
+        // d.fy = d.y;
+        d3.select(this).classed("fixed", true);
       }
 
       function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
+        d.fx = clamp(d3.event.x, 0, w);
+        d.fy = clamp(d3.event.y, 0, h);
+        console.log(d);
+        graphLayout.alpha(1).restart();
       }
 
-      function dragended(d) {
-        if (!d3.event.active) graphLayout.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-      }
+      // function dragended(d) {
+      //   if (!d3.event.active) graphLayout.alphaTarget(0);
+      //   d.fx = null;
+      //   d.fy = null;
+      // }
 
       function neigh(a, b) {
         return a == b || adjlist[a + "-" + b];
@@ -302,6 +336,10 @@ const NetworkChart = (props) => {
     </div>
   );
 };
+
+function clamp(x, lo, hi) {
+  return x < lo ? lo : x > hi ? hi : x;
+}
 
 /* App */
 export default NetworkChart;

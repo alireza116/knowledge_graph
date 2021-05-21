@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   const [data, setData] = useState(() => []);
+  const [file, setFile] = useState(() => null);
   const [expandData, setExpandData] = useState(() => {
     {
     }
@@ -50,56 +51,62 @@ const App = () => {
     setExpandData(expandCopy);
   };
 
+  const handleUpload = (file) => {
+    // const formData = new FormData();
+    // formData.append("file", file);
+
+    // axios.post("api/data", formData).then((res) => {
+    //   //Now do what you want with the response;
+    //   console.log(res);
+    // });
+    setFile(file);
+  };
+
   useEffect(() => {
     //gets the data from the API
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file", file);
+    axios
+      .post("/api/data", formData)
+      .then((res) => {
+        let data = res.data;
+        data = data.filter(
+          (d) => d.from.mainGroup !== "" && d.to.mainGroup !== ""
+        );
 
-    axios.get("/api/data").then((res) => {
-      let data = res.data;
-      data = data.filter((d) => d.from !== "" && d.to !== "");
-      // extract mainGroup and subGroup using regex
-      let processedData = data.map((d) => {
-        let from = d.from;
-        let fromGroup = from.match(numberExtractRegex) || ["0"];
-        let to = d.to;
-        let toGroup = to.match(numberExtractRegex) || ["0"];
-        from = from.replace(` ${fromGroup[0]}`, "");
-        // console.log(from);
-        to = to.replace(` ${toGroup[0]}`, "");
-        // console.log(to);
-        return {
-          from: { mainGroup: from, sub: fromGroup[0] },
-          to: { mainGroup: to, sub: toGroup[0] },
-        };
+        // create a new data format to keep track of expand or collapse groups
+        let expandData = {};
+        data.forEach((d) => {
+          let from = d.from;
+          let to = d.to;
+          if (!(from.mainGroup in expandData)) {
+            expandData[from.mainGroup] = {
+              expand: false,
+              subGroups: [from.subGroup],
+              group: "from",
+            };
+          } else {
+            expandData[from.mainGroup].subGroups.push(from.subGroup);
+          }
+          if (!(to.mainGroup in expandData)) {
+            expandData[to.mainGroup] = {
+              expand: false,
+              subGroups: [to.subGroup],
+              group: "to",
+            };
+          } else {
+            expandData[from.mainGroup].subGroups.push(to.subGroup);
+          }
+        });
+        setData(data);
+        setExpandData(expandData);
+      })
+      .catch((res) => {
+        console.log(res);
+        alert("wrong file uploaded");
       });
-
-      // create a new data format to keep track of expand or collapse groups
-      let expandData = {};
-      processedData.forEach((d) => {
-        let from = d.from;
-        let to = d.to;
-        if (!(from.mainGroup in expandData)) {
-          expandData[from.mainGroup] = {
-            expand: false,
-            subGroups: [from.sub],
-            group: "from",
-          };
-        } else {
-          expandData[from.mainGroup].subGroups.push(from.sub);
-        }
-        if (!(to.mainGroup in expandData)) {
-          expandData[to.mainGroup] = {
-            expand: false,
-            subGroups: [to.sub],
-            group: "to",
-          };
-        } else {
-          expandData[from.mainGroup].subGroups.push(to.sub);
-        }
-      });
-      setData(processedData);
-      setExpandData(expandData);
-    });
-  }, []);
+  }, [file]);
 
   useEffect(() => {
     if (data && expandData) {
@@ -113,31 +120,36 @@ const App = () => {
       data.forEach((d) => {
         let from = d.from;
         let to = d.to;
-        let from_id;
-        let to_id;
+        let value = +d.value;
+        let weight = +d.weight || 1;
+        let weighted_value = value * weight;
         // console.log(expandData[from.mainGroup]);
-        if (expandData[from.mainGroup].expand) {
-          from_id = `${from.mainGroup}_${from.sub}`;
-        } else {
-          // console.log(expandData[from.mainGroup].expand);
-          // console.log("?");
-          from_id = from.mainGroup;
-        }
-        if (expandData[to.mainGroup].expand) {
-          to_id = `${to.mainGroup}_${to.sub}`;
-        } else {
-          to_id = to.mainGroup;
-        }
+
+        let from_id = expandData[from.mainGroup].expand
+          ? `${from.mainGroup}_${from.subGroup}`
+          : from.mainGroup;
+
+        let to_id = expandData[to.mainGroup].expand
+          ? `${to.mainGroup}_${to.subGroup}`
+          : to.mainGroup;
 
         if (from_id in adj) {
           if (to_id in adj[from_id]) {
-            adj[from_id][to_id]++;
+            adj[from_id][to_id].count++;
+            adj[from_id][to_id].weighted_value += weighted_value;
+            adj[from_id][to_id].total_weight += weight;
           } else {
-            adj[from_id][to_id] = 1;
+            adj[from_id][to_id] = {};
+            adj[from_id][to_id].count = 1;
+            adj[from_id][to_id].weighted_value = weighted_value;
+            adj[from_id][to_id].total_weight = weight;
           }
         } else {
           adj[from_id] = {};
-          adj[from_id][to_id] = 1;
+          adj[from_id][to_id] = {};
+          adj[from_id][to_id].count = 1;
+          adj[from_id][to_id].weighted_value = weighted_value;
+          adj[from_id][to_id].total_weight = weight;
         }
       });
       console.log(adj);
@@ -169,7 +181,10 @@ const App = () => {
           network.links.push({
             source: source,
             target: target,
-            value: adj[source][target],
+            edge_data: adj[source][target],
+            weighted_value:
+              adj[source][target].weighted_value /
+              adj[source][target].total_weight,
           });
         });
       });
@@ -180,7 +195,11 @@ const App = () => {
 
   return (
     <div className="app" style={{ height: "100%" }}>
-      <NavBar height={"8%"} className="navBar"></NavBar>
+      <NavBar
+        height={"8%"}
+        className="navBar"
+        handleUpload={handleUpload}
+      ></NavBar>
       <Container className={classes.root} id="root-container" maxWidth={false}>
         <div className={classes.networkVis}>
           <NetworkGraph
