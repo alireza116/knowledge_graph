@@ -1,341 +1,269 @@
-from,to
-External factors,Community-specific outcomes 
-External factors 1,Community-specific outcomes 
-External factors 2,Community-specific outcomes 
-External factors 3,Community-specific outcomes 
-External factors 4,Community-specific outcomes 
-External factors 5,Community-specific outcomes 
-Individual factors,Community-specific outcomes 
-Individual factors,Community-specific outcomes 
-Individual factors 1,Community-specific outcomes 
-Individual factors 2,Community-specific outcomes 
-Individual factors 3,Community-specific outcomes 
-Organizational factors,Community-specific outcomes 
-Organizational factors 1,Community-specific outcomes 
-Organizational factors 2,Community-specific outcomes 
-Organizational factors 3 ,Community-specific outcomes 
-Organizational factors 4 ,Community-specific outcomes 
-Organizational factors 5,Community-specific outcomes 
-Organizational factors 6 ,Community-specific outcomes 
-External factors,Community-specific outcomes 1
-External factors 2,Community-specific outcomes 1
-External factors 3,Community-specific outcomes 1
-External factors 5,Community-specific outcomes 1
-Individual factors,Community-specific outcomes 1
-Individual factors,Community-specific outcomes 1
-Individual factors 1,Community-specific outcomes 1
-Individual factors 2,Community-specific outcomes 1
-Organizational factors,Community-specific outcomes 1
-Organizational factors 1,Community-specific outcomes 1
-Organizational factors 2,Community-specific outcomes 1
-Organizational factors 3 ,Community-specific outcomes 1
-Organizational factors 4 ,Community-specific outcomes 1
-Organizational factors 5,Community-specific outcomes 1
-External factors,Community-specific outcomes 2
-External factors 1,Community-specific outcomes 2
-External factors 3,Community-specific outcomes 2
-External factors 5,Community-specific outcomes 2
-Individual factors,Community-specific outcomes 2
-Individual factors,Community-specific outcomes 2
-Individual factors 1,Community-specific outcomes 2
-Individual factors 2,Community-specific outcomes 2
-Organizational factors,Community-specific outcomes 2
-Organizational factors 3 ,Community-specific outcomes 2
-Organizational factors 4 ,Community-specific outcomes 2
-Organizational factors 5,Community-specific outcomes 2
-Organizational factors 6 ,Community-specific outcomes 2
-External factors,Community-specific outcomes 3
-External factors 1,Community-specific outcomes 3
-External factors 2,Community-specific outcomes 3
-External factors 3,Community-specific outcomes 3
-External factors 4,Community-specific outcomes 3
-External factors 5,Community-specific outcomes 3
-Individual factors,Community-specific outcomes 3
-Individual factors,Community-specific outcomes 3
-Individual factors 1,Community-specific outcomes 3
-Individual factors 2,Community-specific outcomes 3
-Individual factors 3,Community-specific outcomes 3
-Organizational factors,Community-specific outcomes 3
-Organizational factors 1,Community-specific outcomes 3
-Organizational factors 2,Community-specific outcomes 3
-Organizational factors 3 ,Community-specific outcomes 3
-Organizational factors 4 ,Community-specific outcomes 3
-Organizational factors 5,Community-specific outcomes 3
-Organizational factors 6 ,Community-specific outcomes 3
-External factors,Community-specific outcomes 4
-External factors 1,Community-specific outcomes 4
-External factors 2,Community-specific outcomes 4
-External factors 3,Community-specific outcomes 4
-External factors 5,Community-specific outcomes 4
-Individual factors,Community-specific outcomes 4
-Individual factors,Community-specific outcomes 4
-Individual factors 1,Community-specific outcomes 4
-Individual factors 2,Community-specific outcomes 4
-Organizational factors,Community-specific outcomes 4
-Organizational factors 2,Community-specific outcomes 4
-Organizational factors 3 ,Community-specific outcomes 4
-Organizational factors 4 ,Community-specific outcomes 4
-Organizational factors 5,Community-specific outcomes 4
-Organizational factors 6 ,Community-specific outcomes 4
-External factors,Community-specific outcomes 5
-External factors 1,Community-specific outcomes 5
-External factors 3,Community-specific outcomes 5
-External factors 5,Community-specific outcomes 5
-Individual factors,Community-specific outcomes 5
-Individual factors,Community-specific outcomes 5
-Individual factors 1,Community-specific outcomes 5
-Individual factors 2,Community-specific outcomes 5
-Organizational factors,Community-specific outcomes 5
-Organizational factors 1,Community-specific outcomes 5
-Organizational factors 2,Community-specific outcomes 5
-Organizational factors 3 ,Community-specific outcomes 5
-Organizational factors 4 ,Community-specific outcomes 5
-Organizational factors 5,Community-specific outcomes 5
-External factors,Customer-specific outcomes 
-External factors 1,Customer-specific outcomes 
-External factors 2,Customer-specific outcomes 
-External factors 3,Customer-specific outcomes 
-External factors 4,Customer-specific outcomes 
-External factors 5,Customer-specific outcomes 
-Individual factors,Customer-specific outcomes 
-Individual factors,Customer-specific outcomes 
-Individual factors 1,Customer-specific outcomes 
-Individual factors 2,Customer-specific outcomes 
-Individual factors 3,Customer-specific outcomes 
-Organizational factors,Customer-specific outcomes 
-Organizational factors 1,Customer-specific outcomes 
-Organizational factors 2,Customer-specific outcomes 
-Organizational factors 3 ,Customer-specific outcomes 
-Organizational factors 4 ,Customer-specific outcomes 
-Organizational factors 5,Customer-specific outcomes 
-Organizational factors 6 ,Customer-specific outcomes 
-External factors,Customer-specific outcomes 1
-External factors 5,Customer-specific outcomes 1
-Individual factors,Customer-specific outcomes 1
-Individual factors,Customer-specific outcomes 1
-Individual factors 1,Customer-specific outcomes 1
-Organizational factors,Customer-specific outcomes 1
-Organizational factors 2,Customer-specific outcomes 1
-Organizational factors 5,Customer-specific outcomes 1
-Organizational factors 6 ,Customer-specific outcomes 1
-External factors,Customer-specific outcomes 2
-External factors 1,Customer-specific outcomes 2
-External factors 2,Customer-specific outcomes 2
-External factors 3,Customer-specific outcomes 2
-External factors 5,Customer-specific outcomes 2
-Individual factors,Customer-specific outcomes 2
-Individual factors,Customer-specific outcomes 2
-Individual factors 1,Customer-specific outcomes 2
-Individual factors 2,Customer-specific outcomes 2
-Organizational factors,Customer-specific outcomes 2
-Organizational factors 2,Customer-specific outcomes 2
-Organizational factors 3 ,Customer-specific outcomes 2
-Organizational factors 4 ,Customer-specific outcomes 2
-Organizational factors 5,Customer-specific outcomes 2
-Organizational factors 6 ,Customer-specific outcomes 2
-External factors,Customer-specific outcomes 3
-External factors 1,Customer-specific outcomes 3
-External factors 2,Customer-specific outcomes 3
-External factors 3,Customer-specific outcomes 3
-External factors 4,Customer-specific outcomes 3
-External factors 5,Customer-specific outcomes 3
-Individual factors,Customer-specific outcomes 3
-Individual factors,Customer-specific outcomes 3
-Individual factors 1,Customer-specific outcomes 3
-Individual factors 2,Customer-specific outcomes 3
-Individual factors 3,Customer-specific outcomes 3
-Organizational factors,Customer-specific outcomes 3
-Organizational factors 1,Customer-specific outcomes 3
-Organizational factors 2,Customer-specific outcomes 3
-Organizational factors 3 ,Customer-specific outcomes 3
-Organizational factors 4 ,Customer-specific outcomes 3
-Organizational factors 5,Customer-specific outcomes 3
-Organizational factors 6 ,Customer-specific outcomes 3
-External factors,Customer-specific outcomes 4
-External factors 1,Customer-specific outcomes 4
-External factors 2,Customer-specific outcomes 4
-External factors 3,Customer-specific outcomes 4
-External factors 4,Customer-specific outcomes 4
-External factors 5,Customer-specific outcomes 4
-Individual factors,Customer-specific outcomes 4
-Individual factors,Customer-specific outcomes 4
-Individual factors 1,Customer-specific outcomes 4
-Individual factors 2,Customer-specific outcomes 4
-Individual factors 3,Customer-specific outcomes 4
-Organizational factors,Customer-specific outcomes 4
-Organizational factors 1,Customer-specific outcomes 4
-Organizational factors 2,Customer-specific outcomes 4
-Organizational factors 3 ,Customer-specific outcomes 4
-Organizational factors 4 ,Customer-specific outcomes 4
-Organizational factors 5,Customer-specific outcomes 4
-Organizational factors 6 ,Customer-specific outcomes 4
-External factors,Employee-specific outcomes 
-External factors 1,Employee-specific outcomes 
-External factors 2,Employee-specific outcomes 
-External factors 3,Employee-specific outcomes 
-External factors 4,Employee-specific outcomes 
-External factors 5,Employee-specific outcomes 
-Individual factors,Employee-specific outcomes 
-Individual factors,Employee-specific outcomes 
-Individual factors 1,Employee-specific outcomes 
-Individual factors 2,Employee-specific outcomes 
-Individual factors 3,Employee-specific outcomes 
-Organizational factors,Employee-specific outcomes 
-Organizational factors 1,Employee-specific outcomes 
-Organizational factors 2,Employee-specific outcomes 
-Organizational factors 3 ,Employee-specific outcomes 
-Organizational factors 4 ,Employee-specific outcomes 
-Organizational factors 5,Employee-specific outcomes 
-Organizational factors 6 ,Employee-specific outcomes 
-External factors,Employee-specific outcomes 1
-External factors 1,Employee-specific outcomes 1
-External factors 2,Employee-specific outcomes 1
-External factors 3,Employee-specific outcomes 1
-External factors 4,Employee-specific outcomes 1
-External factors 5,Employee-specific outcomes 1
-Individual factors,Employee-specific outcomes 1
-Individual factors,Employee-specific outcomes 1
-Individual factors 1,Employee-specific outcomes 1
-Individual factors 2,Employee-specific outcomes 1
-Organizational factors,Employee-specific outcomes 1
-Organizational factors 1,Employee-specific outcomes 1
-Organizational factors 2,Employee-specific outcomes 1
-Organizational factors 3 ,Employee-specific outcomes 1
-Organizational factors 4 ,Employee-specific outcomes 1
-Organizational factors 5,Employee-specific outcomes 1
-Organizational factors 6 ,Employee-specific outcomes 1
-External factors,Employee-specific outcomes 2
-External factors 1,Employee-specific outcomes 2
-External factors 4,Employee-specific outcomes 2
-External factors 5,Employee-specific outcomes 2
-Individual factors,Employee-specific outcomes 2
-Individual factors,Employee-specific outcomes 2
-Individual factors 1,Employee-specific outcomes 2
-Individual factors 2,Employee-specific outcomes 2
-Organizational factors,Employee-specific outcomes 2
-Organizational factors 1,Employee-specific outcomes 2
-Organizational factors 2,Employee-specific outcomes 2
-Organizational factors 5,Employee-specific outcomes 2
-Organizational factors 6 ,Employee-specific outcomes 2
-External factors,Employee-specific outcomes 3
-External factors 1,Employee-specific outcomes 3
-External factors 2,Employee-specific outcomes 3
-External factors 3,Employee-specific outcomes 3
-External factors 4,Employee-specific outcomes 3
-External factors 5,Employee-specific outcomes 3
-Individual factors,Employee-specific outcomes 3
-Individual factors,Employee-specific outcomes 3
-Individual factors 1,Employee-specific outcomes 3
-Individual factors 2,Employee-specific outcomes 3
-Individual factors 3,Employee-specific outcomes 3
-Organizational factors,Employee-specific outcomes 3
-Organizational factors 1,Employee-specific outcomes 3
-Organizational factors 2,Employee-specific outcomes 3
-Organizational factors 3 ,Employee-specific outcomes 3
-Organizational factors 4 ,Employee-specific outcomes 3
-Organizational factors 5,Employee-specific outcomes 3
-Organizational factors 6 ,Employee-specific outcomes 3
-External factors,Employee-specific outcomes 4
-External factors 5,Employee-specific outcomes 4
-Individual factors,Employee-specific outcomes 4
-Individual factors,Employee-specific outcomes 4
-Organizational factors,Employee-specific outcomes 4
-Organizational factors 6 ,Employee-specific outcomes 4
-External factors,Investor-specific outcomes 
-External factors 1,Investor-specific outcomes 
-External factors 2,Investor-specific outcomes 
-External factors 3,Investor-specific outcomes 
-External factors 4,Investor-specific outcomes 
-External factors 5,Investor-specific outcomes 
-Individual factors,Investor-specific outcomes 
-Individual factors,Investor-specific outcomes 
-Individual factors 1,Investor-specific outcomes 
-Individual factors 2,Investor-specific outcomes 
-Individual factors 3,Investor-specific outcomes 
-Organizational factors,Investor-specific outcomes 
-Organizational factors 1,Investor-specific outcomes 
-Organizational factors 2,Investor-specific outcomes 
-Organizational factors 3 ,Investor-specific outcomes 
-Organizational factors 4 ,Investor-specific outcomes 
-Organizational factors 5,Investor-specific outcomes 
-Organizational factors 6 ,Investor-specific outcomes 
-External factors,Investor-specific outcomes 1
-External factors 1,Investor-specific outcomes 1
-External factors 2,Investor-specific outcomes 1
-External factors 3,Investor-specific outcomes 1
-External factors 4,Investor-specific outcomes 1
-External factors 5,Investor-specific outcomes 1
-Individual factors,Investor-specific outcomes 1
-Individual factors,Investor-specific outcomes 1
-Individual factors 1,Investor-specific outcomes 1
-Individual factors 2,Investor-specific outcomes 1
-Individual factors 3,Investor-specific outcomes 1
-Organizational factors,Investor-specific outcomes 1
-Organizational factors 1,Investor-specific outcomes 1
-Organizational factors 2,Investor-specific outcomes 1
-Organizational factors 3 ,Investor-specific outcomes 1
-Organizational factors 4 ,Investor-specific outcomes 1
-Organizational factors 5,Investor-specific outcomes 1
-Organizational factors 6 ,Investor-specific outcomes 1
-External factors,Investor-specific outcomes 2
-External factors 1,Investor-specific outcomes 2
-External factors 2,Investor-specific outcomes 2
-External factors 3,Investor-specific outcomes 2
-External factors 5,Investor-specific outcomes 2
-Individual factors,Investor-specific outcomes 2
-Individual factors,Investor-specific outcomes 2
-Individual factors 1,Investor-specific outcomes 2
-Individual factors 3,Investor-specific outcomes 2
-Organizational factors,Investor-specific outcomes 2
-Organizational factors 2,Investor-specific outcomes 2
-Organizational factors 3 ,Investor-specific outcomes 2
-Organizational factors 4 ,Investor-specific outcomes 2
-Organizational factors 5,Investor-specific outcomes 2
-Organizational factors 6 ,Investor-specific outcomes 2
-External factors,Investor-specific outcomes 3
-External factors 1,Investor-specific outcomes 3
-External factors 2,Investor-specific outcomes 3
-External factors 3,Investor-specific outcomes 3
-External factors 4,Investor-specific outcomes 3
-External factors 5,Investor-specific outcomes 3
-Individual factors,Investor-specific outcomes 3
-Individual factors,Investor-specific outcomes 3
-Individual factors 1,Investor-specific outcomes 3
-Individual factors 2,Investor-specific outcomes 3
-Individual factors 3,Investor-specific outcomes 3
-Organizational factors,Investor-specific outcomes 3
-Organizational factors 1,Investor-specific outcomes 3
-Organizational factors 2,Investor-specific outcomes 3
-Organizational factors 4 ,Investor-specific outcomes 3
-Organizational factors 5,Investor-specific outcomes 3
-Organizational factors 6 ,Investor-specific outcomes 3
-External factors,Investor-specific outcomes 4
-External factors 1,Investor-specific outcomes 4
-External factors 2,Investor-specific outcomes 4
-External factors 3,Investor-specific outcomes 4
-External factors 5,Investor-specific outcomes 4
-Individual factors,Investor-specific outcomes 4
-Individual factors,Investor-specific outcomes 4
-Individual factors 1,Investor-specific outcomes 4
-Individual factors 2,Investor-specific outcomes 4
-Individual factors 3,Investor-specific outcomes 4
-Organizational factors,Investor-specific outcomes 4
-Organizational factors 2,Investor-specific outcomes 4
-Organizational factors 3 ,Investor-specific outcomes 4
-Organizational factors 4 ,Investor-specific outcomes 4
-Organizational factors 5,Investor-specific outcomes 4
-Organizational factors 6 ,Investor-specific outcomes 4
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+from.mainGroup,from.subGroup,to.mainGroup,to.subGroup,value,weight
+External factors,2,Community-specific outcomes,1,0.16983876,95
+External factors,3,Community-specific outcomes,1,-0.606556654,2
+External factors,5,Community-specific outcomes,1,-0.739922218,76
+Individual factors,1,Community-specific outcomes,1,0.797721081,121
+Individual factors,2,Community-specific outcomes,1,0.422877179,70
+Organizational factors,1,Community-specific outcomes,1,0.863024236,348
+Organizational factors,2,Community-specific outcomes,1,-0.153059468,1023
+Organizational factors,3,Community-specific outcomes,1,-0.458742758,121
+Organizational factors,4,Community-specific outcomes,1,-0.93396846,19
+Organizational factors,5,Community-specific outcomes,1,-0.758034406,38
+External factors,1,Community-specific outcomes,2,0.696284851,401
+External factors,3,Community-specific outcomes,2,0.755760056,72
+External factors,5,Community-specific outcomes,2,-0.758328899,596
+Individual factors,1,Community-specific outcomes,2,0.284743943,103
+Individual factors,2,Community-specific outcomes,2,0.118150884,295
+Organizational factors,3,Community-specific outcomes,2,-0.740388389,57
+Organizational factors,4,Community-specific outcomes,2,0.935949623,190
+Organizational factors,5,Community-specific outcomes,2,0.336213145,305
+Organizational factors,6,Community-specific outcomes,2,-0.272659546,13
+External factors,1,Community-specific outcomes,3,-0.403435652,148
+External factors,2,Community-specific outcomes,3,-0.382091469,38
+External factors,3,Community-specific outcomes,3,0.398894454,141
+External factors,4,Community-specific outcomes,3,0.539199526,374
+External factors,5,Community-specific outcomes,3,0.951149471,159
+Individual factors,1,Community-specific outcomes,3,0.685115772,179
+Individual factors,2,Community-specific outcomes,3,-0.618089507,343
+Individual factors,3,Community-specific outcomes,3,0.110182987,87
+Organizational factors,1,Community-specific outcomes,3,0.523178036,149
+Organizational factors,2,Community-specific outcomes,3,0.919813896,78
+Organizational factors,3,Community-specific outcomes,3,-0.21998885,845
+Organizational factors,4,Community-specific outcomes,3,-0.781061094,62
+Organizational factors,5,Community-specific outcomes,3,-0.181887821,138
+Organizational factors,6,Community-specific outcomes,3,0.113262447,417
+External factors,1,Community-specific outcomes,4,-0.557262481,258
+External factors,2,Community-specific outcomes,4,-0.339180632,65
+External factors,3,Community-specific outcomes,4,-0.612682932,104
+External factors,5,Community-specific outcomes,4,0.977983352,121
+Individual factors,1,Community-specific outcomes,4,-0.494886528,165
+Individual factors,2,Community-specific outcomes,4,0.854037778,21
+Organizational factors,2,Community-specific outcomes,4,0.205998757,106
+Organizational factors,3,Community-specific outcomes,4,-0.120546704,199
+Organizational factors,4,Community-specific outcomes,4,-0.719407439,147
+Organizational factors,5,Community-specific outcomes,4,0.837474313,149
+Organizational factors,6,Community-specific outcomes,4,-0.961011427,15
+External factors,1,Community-specific outcomes,5,-0.339901634,1153
+External factors,3,Community-specific outcomes,5,0.802146807,2332
+External factors,5,Community-specific outcomes,5,-0.701794361,344
+Individual factors,1,Community-specific outcomes,5,0.116937791,227
+Individual factors,2,Community-specific outcomes,5,-0.644433437,4
+Organizational factors,1,Community-specific outcomes,5,-0.857999851,357
+Organizational factors,2,Community-specific outcomes,5,-0.578920625,43
+Organizational factors,3,Community-specific outcomes,5,0.765500881,103
+Organizational factors,4,Community-specific outcomes,5,0.28546682,588
+Organizational factors,5,Community-specific outcomes,5,-0.503043556,1154
+External factors,5,Customer-specific outcomes,1,0.858843872,135
+Individual factors,1,Customer-specific outcomes,1,0.332639832,125
+Organizational factors,2,Customer-specific outcomes,1,-0.719557729,85
+Organizational factors,5,Customer-specific outcomes,1,0.696632206,120
+Organizational factors,6,Customer-specific outcomes,1,-0.88966215,104
+External factors,1,Customer-specific outcomes,2,0.263420395,24223
+External factors,2,Customer-specific outcomes,2,-0.883292619,431
+External factors,3,Customer-specific outcomes,2,-0.960043455,69
+External factors,5,Customer-specific outcomes,2,0.63707753,6
+Individual factors,1,Customer-specific outcomes,2,0.894806487,649
+Individual factors,2,Customer-specific outcomes,2,-0.549080604,2069
+Organizational factors,2,Customer-specific outcomes,2,-0.787976107,1196
+Organizational factors,3,Customer-specific outcomes,2,0.955665752,50
+Organizational factors,4,Customer-specific outcomes,2,0.438292835,85
+Organizational factors,5,Customer-specific outcomes,2,-0.459904335,119
+Organizational factors,6,Customer-specific outcomes,2,0.456642517,113
+External factors,1,Customer-specific outcomes,3,0.054007541,119
+External factors,2,Customer-specific outcomes,3,0.351019746,451
+External factors,3,Customer-specific outcomes,3,-0.430930623,9
+External factors,4,Customer-specific outcomes,3,-0.239518246,469
+External factors,5,Customer-specific outcomes,3,-0.474905453,55
+Individual factors,1,Customer-specific outcomes,3,-0.457480382,205
+Individual factors,2,Customer-specific outcomes,3,0.818208717,30
+Individual factors,3,Customer-specific outcomes,3,0.279050059,21
+Organizational factors,1,Customer-specific outcomes,3,-0.818948925,82
+Organizational factors,2,Customer-specific outcomes,3,-0.280908784,70
+Organizational factors,3,Customer-specific outcomes,3,-0.220223693,107
+Organizational factors,4,Customer-specific outcomes,3,0.13133601,860
+Organizational factors,5,Customer-specific outcomes,3,-0.674303772,645
+Organizational factors,6,Customer-specific outcomes,3,-0.598235863,316
+External factors,1,Customer-specific outcomes,4,-0.929517518,85
+External factors,2,Customer-specific outcomes,4,-0.905436493,153
+External factors,3,Customer-specific outcomes,4,-0.695082586,282
+External factors,4,Customer-specific outcomes,4,0.386362959,60
+External factors,5,Customer-specific outcomes,4,-0.670954853,367
+Individual factors,1,Customer-specific outcomes,4,-0.580641003,132
+Individual factors,2,Customer-specific outcomes,4,0.779731947,236
+Individual factors,3,Customer-specific outcomes,4,-0.458776764,122
+Organizational factors,1,Customer-specific outcomes,4,-0.073186491,100
+Organizational factors,2,Customer-specific outcomes,4,0.298986708,20
+Organizational factors,3,Customer-specific outcomes,4,0.568295349,96
+Organizational factors,4,Customer-specific outcomes,4,-0.866088377,229
+Organizational factors,5,Customer-specific outcomes,4,-0.398189841,162
+Organizational factors,6,Customer-specific outcomes,4,-0.094291041,18
+External factors,1,Employee-specific outcomes,1,0.097653579,144
+External factors,2,Employee-specific outcomes,1,-0.986869638,764
+External factors,3,Employee-specific outcomes,1,-0.422297598,45
+External factors,4,Employee-specific outcomes,1,-0.508879234,125
+External factors,5,Employee-specific outcomes,1,-0.241834151,157
+Individual factors,1,Employee-specific outcomes,1,0.02057637,12
+Individual factors,2,Employee-specific outcomes,1,-0.320145033,21
+Organizational factors,1,Employee-specific outcomes,1,0.67964039,1449
+Organizational factors,2,Employee-specific outcomes,1,0.224325478,63
+Organizational factors,3,Employee-specific outcomes,1,0.695425435,91
+Organizational factors,4,Employee-specific outcomes,1,-0.108719787,88
+Organizational factors,5,Employee-specific outcomes,1,-0.827981026,10
+Organizational factors,6,Employee-specific outcomes,1,0.276002159,274
+External factors,1,Employee-specific outcomes,2,0.282093619,789
+External factors,4,Employee-specific outcomes,2,0.264579895,70
+External factors,5,Employee-specific outcomes,2,0.009126127,118
+Individual factors,1,Employee-specific outcomes,2,0.65283564,76
+Individual factors,2,Employee-specific outcomes,2,0.092887234,198
+Organizational factors,1,Employee-specific outcomes,2,0.946131564,147
+Organizational factors,2,Employee-specific outcomes,2,-0.465310277,158
+Organizational factors,5,Employee-specific outcomes,2,0.221348754,23
+Organizational factors,6,Employee-specific outcomes,2,-0.932719921,580
+External factors,1,Employee-specific outcomes,3,0.242343551,78
+External factors,2,Employee-specific outcomes,3,-0.061325278,57
+External factors,3,Employee-specific outcomes,3,-0.588291742,3377
+External factors,4,Employee-specific outcomes,3,0.082245117,13
+External factors,5,Employee-specific outcomes,3,-0.345684119,964
+Individual factors,1,Employee-specific outcomes,3,0.316336278,175
+Individual factors,2,Employee-specific outcomes,3,0.079945095,152
+Individual factors,3,Employee-specific outcomes,3,-0.851535825,112
+Organizational factors,1,Employee-specific outcomes,3,-0.816593419,60
+Organizational factors,2,Employee-specific outcomes,3,-0.749156886,18
+Organizational factors,3,Employee-specific outcomes,3,-0.004848659,412
+Organizational factors,4,Employee-specific outcomes,3,-0.903951353,98
+Organizational factors,5,Employee-specific outcomes,3,0.500465909,586
+Organizational factors,6,Employee-specific outcomes,3,-0.358385061,709
+External factors,5,Employee-specific outcomes,4,0.899314126,47
+Organizational factors,6,Employee-specific outcomes,4,0.303535875,36
+External factors,1,Investor-specific outcomes,1,0.012609945,310
+External factors,2,Investor-specific outcomes,1,-0.659436966,434
+External factors,3,Investor-specific outcomes,1,0.482705751,845
+External factors,4,Investor-specific outcomes,1,0.479374798,144
+External factors,5,Investor-specific outcomes,1,-0.38745675,48
+Individual factors,1,Investor-specific outcomes,1,0.900908278,242
+Individual factors,2,Investor-specific outcomes,1,-0.928549806,50
+Individual factors,3,Investor-specific outcomes,1,-0.872792532,333
+Organizational factors,1,Investor-specific outcomes,1,-0.834761013,123
+Organizational factors,2,Investor-specific outcomes,1,-0.569546122,69
+Organizational factors,3,Investor-specific outcomes,1,0.373502143,220
+Organizational factors,4,Investor-specific outcomes,1,0.561681557,8100
+Organizational factors,5,Investor-specific outcomes,1,-0.740114553,674
+Organizational factors,6,Investor-specific outcomes,1,0.335325022,125
+External factors,1,Investor-specific outcomes,2,0.969373446,14
+External factors,2,Investor-specific outcomes,2,-0.466845834,252
+External factors,3,Investor-specific outcomes,2,0.115444782,118
+External factors,5,Investor-specific outcomes,2,-0.726672708,296
+Individual factors,1,Investor-specific outcomes,2,0.937966685,58
+Individual factors,3,Investor-specific outcomes,2,0.46900145,558
+Organizational factors,2,Investor-specific outcomes,2,0.710524754,114
+Organizational factors,3,Investor-specific outcomes,2,0.517095659,475
+Organizational factors,4,Investor-specific outcomes,2,-0.020418789,214
+Organizational factors,5,Investor-specific outcomes,2,0.049793762,2821
+Organizational factors,6,Investor-specific outcomes,2,0.51676669,1334
+External factors,1,Investor-specific outcomes,3,0.193489862,476
+External factors,2,Investor-specific outcomes,3,0.841459245,1807
+External factors,3,Investor-specific outcomes,3,0.382410048,210
+External factors,4,Investor-specific outcomes,3,0.325464687,3397
+External factors,5,Investor-specific outcomes,3,0.837910964,153
+Individual factors,1,Investor-specific outcomes,3,-0.691918183,19
+Individual factors,2,Investor-specific outcomes,3,-0.426169806,42
+Individual factors,3,Investor-specific outcomes,3,-0.011625936,57
+Organizational factors,1,Investor-specific outcomes,3,0.121811293,24
+Organizational factors,2,Investor-specific outcomes,3,0.067775047,189
+Organizational factors,4,Investor-specific outcomes,3,0.824809021,487
+Organizational factors,5,Investor-specific outcomes,3,0.927841948,93
+Organizational factors,6,Investor-specific outcomes,3,0.632272727,184
+External factors,1,Investor-specific outcomes,4,0.923719121,95
+External factors,2,Investor-specific outcomes,4,0.053591489,191
+External factors,3,Investor-specific outcomes,4,-0.979072538,450
+External factors,5,Investor-specific outcomes,4,0.536010888,195
+Individual factors,1,Investor-specific outcomes,4,0.631682062,150
+Individual factors,2,Investor-specific outcomes,4,-0.469429327,1813
+Individual factors,3,Investor-specific outcomes,4,-0.239874285,307
+Organizational factors,2,Investor-specific outcomes,4,0.638754276,443
+Organizational factors,3,Investor-specific outcomes,4,-0.858833508,2219
+Organizational factors,4,Investor-specific outcomes,4,0.346788036,219
+Organizational factors,5,Investor-specific outcomes,4,0.76128674,136
+Organizational factors,6,Investor-specific outcomes,4,0.856275506,332
+Customer-specific outcomes,1,Investor-specific outcomes,1,-0.539056488,58
+Customer-specific outcomes,2,Investor-specific outcomes,1,-0.59018922,446
+Customer-specific outcomes,2,Investor-specific outcomes,2,-0.485353469,17
+Customer-specific outcomes,3,Investor-specific outcomes,2,0.924611686,205
+Customer-specific outcomes,3,Investor-specific outcomes,3,-0.440142131,173
+Customer-specific outcomes,4,Investor-specific outcomes,3,-0.501519419,4
+Customer-specific outcomes,4,Investor-specific outcomes,4,0.764871416,210
+Employee-specific outcomes,1,Investor-specific outcomes,4,0.862298709,239
+Employee-specific outcomes,1,Community-specific outcomes,3,-0.180288054,98
+Employee-specific outcomes,2,Community-specific outcomes,4,-0.474656465,102
+Employee-specific outcomes,3,Community-specific outcomes,4,0.979929873,5
+Employee-specific outcomes,3,Community-specific outcomes,5,-0.61783169,137
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,

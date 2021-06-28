@@ -150,7 +150,8 @@ const NetworkChart = (props) => {
         .data(graph.links)
         .join("line")
         .attr("stroke", (d) => {
-          return edgeColorScale(d.weighted_value);
+          // return edgeColorScale(d.weighted_value);
+          return d.weighted_value > 0 ? "green" : "red";
         })
         .attr("stroke-width", (d) => {
           return widthScale(Math.abs(d.weighted_value));

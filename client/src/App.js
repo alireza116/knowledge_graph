@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Container } from "@material-ui/core";
 import NavBar from "./components/nav/nav";
 import * as d3 from "d3";
+import Table from "./components/table/table";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import NetworkGraph from "./components/network/network";
 import "./App.css";
 
 let borderColor = "grey";
-let parseDate = d3.timeParse("%Y-%m-%d %H");
-let numberExtractRegex = /\d+/g;
+// let parseDate = d3.timeParse("%Y-%m-%d %H");
+// let numberExtractRegex = /\d+/g;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
   networkVis: {
     gridColumn: "1 / 13",
-    gridRow: "1 / 13",
-
+    gridRow: "1 / 7",
+    border: "solid 1px",
+    borderColor: borderColor,
+  },
+  tableView: {
+    gridColumn: "1 / 13",
+    gridRow: "7 / 13",
+    border: "solid 1px",
     borderColor: borderColor,
   },
 }));
@@ -188,7 +195,7 @@ const App = () => {
           });
         });
       });
-      // console.log(network);
+      console.log(network);
       setNetworkData(network);
     }
   }, [data, expandData]);
@@ -206,6 +213,9 @@ const App = () => {
             data={networkData}
             handleExpand={handleExpand}
           ></NetworkGraph>
+        </div>
+        <div className={classes.tableView}>
+          <Table data={networkData}></Table>
         </div>
       </Container>
     </div>
